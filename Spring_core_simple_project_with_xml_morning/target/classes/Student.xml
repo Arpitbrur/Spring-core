@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!-- Servlet init method and destroy method --> 
+    
+    <bean class="com.jsp.spring_servlet.Student" id="studentId" 
+    init-method="initMethod" destroy-method="destroyMethod"/>
+    
+    <!-- Constructor injection with teacher class -->
+    
+    <bean class="com.jsp.spring_servlet.Constructors.Teacher" id="teacherId">
+    <constructor-arg name="teacherId" value="123"/>
+    <constructor-arg name="teacherName" value="Arpit"/>
+    <constructor-arg name="teacherEmail" value="Arpit@gmail.com"/>
+    </bean>
+
+
+	<!-- setter injection with product class -->
+		
+	<bean class="com.jsp.spring_servlet.setter.Product" id="productDetail">
+	<property name="productId" value="123"/>
+	<property name="productName" value="Samsung"/>
+	<property name="productPrice" value="200000"/>
+	</bean>
+		
+	<!-- Object reference injection with processor and laptop -->
+	<bean class="com.jsp.spring_object_reference.Processor" id="lapprocessor"/>
+	
+	<bean class="com.jsp.spring_object_reference.Laptop" id="myLAptop">
+	<property name="processor" ref="lapprocessor"></property>
+	</bean>
+</beans>

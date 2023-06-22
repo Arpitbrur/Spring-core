@@ -8,6 +8,8 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
 
 
+	<bean id="studentDetails" class="com.jsp.Spring_core_simple_project.Student"/>
+
 	<!-- setter injection with product class -->
 
 	<bean id="empDetails" class="com.jsp.Spring_core_simple_project.setter.Employee">
@@ -16,5 +18,14 @@
 	<property name="empName" value="Arpit"></property>
 	<property name="empEmail" value="Arpit@gmail.com"></property>
 	</bean>
+	
+	<!-- Constructor injection with mobile class -->
 
+	<bean id="myMobile" class="com.jsp.Spring_core_simple_project.constructor.Mobile">
+	<constructor-arg  index="0" value="123"/>
+	<constructor-arg  index="1" value="apple"/>
+	<constructor-arg  index="2" value="silver"/>
+	<constructor-arg  index="3" value="1450000"/>
+
+	</bean>
 </beans>

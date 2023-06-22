@@ -14,5 +14,7 @@ public class EmployeeDriver {
 		System.out.println(employee.getEmpId());
 		System.out.println(employee.getEmpName());
 		System.out.println(employee.getEmpEmail());
+		
+		applicationContext.close();
 	}
 }
